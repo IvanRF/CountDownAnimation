@@ -17,38 +17,48 @@ import ar.com.ivanridao.countdownanimation.CountDownAnimation.CountDownListener;
 public class TestActivity extends Activity implements CountDownListener {
 
 	private static final int COUNT_DOWN = 10;
-	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        
-        TextView textView = (TextView) findViewById(R.id.textView);
-        
-        final CountDownAnimation countDownAnimation = new CountDownAnimation(textView, COUNT_DOWN);
-        countDownAnimation.setCountDownListener(this);
-        
-        //Change default animation
-        //Use scale animation
-//        Animation scaleAnimation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//        countDownAnimation.setAnimation(scaleAnimation);
-    	
-        //Use a set of animations
-//        AnimationSet animationSet = new AnimationSet(false);
-//        animationSet.addAnimation(scaleAnimation);
-//        animationSet.addAnimation(new AlphaAnimation(1.0f, 0.0f));
-//        countDownAnimation.setAnimation(animationSet);
-        
-        Button createLyricsButton = (Button) findViewById(R.id.button);
-        createLyricsButton.setOnClickListener(new OnClickListener() {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+
+		TextView textView = (TextView) findViewById(R.id.textView);
+
+		final CountDownAnimation countDownAnimation = new CountDownAnimation(
+				textView, COUNT_DOWN);
+		countDownAnimation.setCountDownListener(this);
+
+		// Change default animation
+		// Use scale animation
+		// Animation scaleAnimation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f,
+		// Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+		// countDownAnimation.setAnimation(scaleAnimation);
+
+		// Use a set of animations
+		// AnimationSet animationSet = new AnimationSet(false);
+		// animationSet.addAnimation(scaleAnimation);
+		// animationSet.addAnimation(new AlphaAnimation(1.0f, 0.0f));
+		// countDownAnimation.setAnimation(animationSet);
+
+		Button startButton = (Button) findViewById(R.id.button);
+		startButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				countDownAnimation.start();
 			}
 		});
-    }
-    
-    @Override
+
+		Button cancelButton = (Button) findViewById(R.id.buttonCancel);
+		cancelButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				countDownAnimation.cancel();
+			}
+		});
+	}
+
+	@Override
 	public void onCountDownEnd(CountDownAnimation animation) {
 		Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show();
 	}

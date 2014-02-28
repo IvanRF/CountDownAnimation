@@ -68,6 +68,13 @@ public class CountDownAnimation {
 		}
 	}
 
+	public void cancel() {
+		mHandler.removeCallbacks(mCountDown);
+
+		mTextView.setText("");
+		mTextView.setVisibility(View.GONE);
+	}
+
 	public void setAnimation(Animation animation) {
 		this.mAnimation = animation;
 		if (mAnimation.getDuration() == 0)

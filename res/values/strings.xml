@@ -3,5 +3,6 @@
 
     <string name="app_name">CountDownAnimation</string>
     <string name="start">Start</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
