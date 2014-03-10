@@ -42,3 +42,9 @@ countDownAnimation.setCountDownListener(new CountDownListener() {
 	}
 });
 ```
+## Screenshots ##
+```TestActivity``` with default animation: Alpha
+![Default animation](https://raw.github.com/IvanRF/CountDownAnimation/master/screenshots/CountDownAnimation1.gif)
+
+```TestActivity``` with a set of animations: Scale + Alpha
+![Set of animations: Scale + Alpha](https://raw.github.com/IvanRF/CountDownAnimation/master/screenshots/CountDownAnimation2.gif)
