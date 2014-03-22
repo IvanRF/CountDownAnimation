@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ar.com.ivanridao.countdownanimation;
+package com.ivanrf.countdownanimation;
 
 import android.os.Handler;
 import android.view.View;

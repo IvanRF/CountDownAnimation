@@ -1,12 +1,12 @@
 Count Down Animation
 ==================
 
-This project includes the [CountDownAnimation](https://github.com/IvanRF/CountDownAnimation/blob/master/src/ar/com/ivanridao/countdownanimation/CountDownAnimation.java) class and one Activity to test it.
+This project includes the [CountDownAnimation](src/com/ivanrf/countdownanimation/CountDownAnimation.java) class and one Activity to test it.
 
 How to use it
 -----------
 
-In [TestActivity](https://github.com/IvanRF/CountDownAnimation/blob/master/src/ar/com/ivanridao/countdownanimation/TestActivity.java) class you will find a complete example.
+In [TestActivity](src/com/ivanrf/countdownanimation/TestActivity.java) class you will find a complete example.
 Basically, you need to provide a ```TextView```, in which the count down will be shown, and the starting count number. Then, simply call ```start()```.
 
 ```java
@@ -44,7 +44,7 @@ countDownAnimation.setCountDownListener(new CountDownListener() {
 ```
 ## Screenshots ##
 ```TestActivity``` with default animation: Alpha
-![Default animation](https://raw.github.com/IvanRF/CountDownAnimation/master/screenshots/CountDownAnimation1.gif)
+![Default animation](screenshots/CountDownAnimation1.gif)
 
 ```TestActivity``` with a set of animations: Scale + Alpha
-![Set of animations: Scale + Alpha](https://raw.github.com/IvanRF/CountDownAnimation/master/screenshots/CountDownAnimation2.gif)
+![Set of animations: Scale + Alpha](screenshots/CountDownAnimation2.gif)

@@ -213,5 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-gen/ar/com/ivanridao/countdownanimation/BuildConfig.java
-gen/ar/com/ivanridao/countdownanimation/R.java
+
+gen/
