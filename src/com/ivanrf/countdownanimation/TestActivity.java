@@ -16,8 +16,6 @@
 
 package com.ivanrf.countdownanimation;
 
-import com.ivanrf.countdownanimation.CountDownAnimation.CountDownListener;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +24,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +31,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-@SuppressWarnings("unused")
+import com.ivanrf.countdownanimation.CountDownAnimation.CountDownListener;
+
 public class TestActivity extends Activity implements CountDownListener {
 
 	private TextView textView;
