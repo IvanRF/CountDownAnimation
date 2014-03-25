@@ -1,4 +1,4 @@
-Count Down Animation
+![](screenshots/icon.png) Count Down Animation
 ==================
 
 This project includes the [CountDownAnimation](src/com/ivanrf/countdownanimation/CountDownAnimation.java) class and one Activity to test it.
@@ -42,6 +42,10 @@ countDownAnimation.setCountDownListener(new CountDownListener() {
 	}
 });
 ```
+
+## Download ##
+You can [download the latest release](../../releases/latest). The apk file of the test application is provided.
+
 ## Screenshots ##
 ```TestActivity``` with default animation: Alpha
 ![Default animation](screenshots/CountDownAnimation1.gif)
