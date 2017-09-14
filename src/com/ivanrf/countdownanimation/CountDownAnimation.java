@@ -35,6 +35,7 @@ public class CountDownAnimation {
 	private int mStartCount;
 	private int mCurrentCount;
 	private CountDownListener mListener;
+    	private CountDownProgressListener mProgressListener;
 
 	private Handler mHandler = new Handler();
 
@@ -44,6 +45,9 @@ public class CountDownAnimation {
 				mTextView.setText(mCurrentCount + "");
 				mTextView.startAnimation(mAnimation);
 				mCurrentCount--;
+				
+				if(mProgressListener!=null)
+                    			mProgressListener.onCountDownProgress(CountDownAnimation.this);
 			} else {
 				mTextView.setVisibility(View.GONE);
 				if (mListener != null)
@@ -136,6 +140,14 @@ public class CountDownAnimation {
 		return mStartCount;
 	}
 
+    	/**
+     	* Returns current count left for the count down animation
+     	* @return
+     	*/
+    	public int getCurrentCount() {
+        	return mCurrentCount;
+    	}
+    
 	/**
 	 * Binds a listener to this count down animation. The count down listener is
 	 * notified of events such as the end of the animation.
@@ -161,4 +173,31 @@ public class CountDownAnimation {
 		 */
 		void onCountDownEnd(CountDownAnimation animation);
 	}
+	
+
+    	/**
+     	* Binds a listener to this count down animation. The count down listener is
+     	* notified of events such as the progress of the animation.
+     	*
+     	* @param progressListener
+     	*            The count down listener to be notified
+     	*/
+    	public void setCountDownProgressListener(CountDownProgressListener progressListener) {
+     	   mProgressListener = progressListener;
+    	}
+
+    	/**
+    	* A count down progress listener receives notifications from a count down animation.
+     	* Notifications indicate count down animation related events, such as the
+     	* progress of the animation.
+     	*/
+    	public static interface CountDownProgressListener {
+        	/**
+         	* Notifies the progress of the count down animation.
+         	*
+         	* @param animation
+         	*            The count down animation which reached its next step.
+         	*/
+        	void onCountDownProgress(CountDownAnimation animation);
+    	}
 }
