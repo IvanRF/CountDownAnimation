@@ -121,6 +121,9 @@ public class TestActivity extends Activity implements CountDownListener, CountDo
 		Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show();
 	}
 
-    	@Override     	public void onCountDownProgress(CountDownAnimation animation) {
-		// Do whatever you want to do, on progress of every second         	Toast.makeText(this, animation.getCurrentCount()+” seconds left!”, Toast.LENGTH_SHORT).show();     	}
+    	@Override
+	public void onCountDownProgress(CountDownAnimation animation) {
+		// Do whatever you want to do, on progress of every second
+		Toast.makeText(this, animation.getCurrentCount()+” seconds left!”, Toast.LENGTH_SHORT).show();
+	}
 }
