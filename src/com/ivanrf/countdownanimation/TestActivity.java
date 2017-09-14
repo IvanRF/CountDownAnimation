@@ -32,8 +32,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ivanrf.countdownanimation.CountDownAnimation.CountDownListener;
+import com.ivanrf.countdownanimation.CountDownAnimation.CountDownProgressListener;
 
-public class TestActivity extends Activity implements CountDownListener {
+public class TestActivity extends Activity implements CountDownListener, CountDownProgressListener  {
 
 	private TextView textView;
 	private EditText startCountEditText;
@@ -118,5 +119,11 @@ public class TestActivity extends Activity implements CountDownListener {
 	@Override
 	public void onCountDownEnd(CountDownAnimation animation) {
 		Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show();
+	}
+
+    	@Override
+	public void onCountDownProgress(CountDownAnimation animation) {
+		// Do whatever you want to do, on progress of every second
+		Toast.makeText(this, animation.getCurrentCount()+” seconds left!”, Toast.LENGTH_SHORT).show();
 	}
 }
